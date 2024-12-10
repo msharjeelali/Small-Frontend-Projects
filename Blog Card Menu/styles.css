@@ -63,14 +63,14 @@ h1 {
   margin-left: 10px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 400px) {
   .card {
     width: 327px;
     height: 501px;
   }
 }
 
-@media (min-width: 376px) {
+@media (min-width: 401px) {
   .card {
     width: 384px;
     height: 522px;
