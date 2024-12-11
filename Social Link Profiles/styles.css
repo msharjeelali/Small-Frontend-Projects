@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  font-family: Inter, san-serif;
+}
+
+body {
+  background-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 500px;
+  background-color: hsl(0, 0%, 12%);
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#address {
+  text-align: center;
+  color: hsl(75, 94%, 57%);
+  font-size: 16px;
+}
+
+#profession {
+  text-align: center;
+  font-size: 12px;
+  color: grey;
+}
+
+button {
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 7px;
+  width: 95%;
+  height: 35px;
+  margin: 7px;
+  box-shadow: none;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: hsl(75, 94%, 57%);
+  color: black;
+}
+
+@media (max-width: 350px) {
+  .card {
+    width: 100%;
+  }
+}
