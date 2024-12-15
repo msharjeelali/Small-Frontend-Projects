@@ -6,38 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Weather App</title>
     <link href="styles.css" rel="stylesheet">
+    <link href="script.js" rel="script">
 </head>
 
 <body>
     <div class="card">
         <div class="search">
-            <input type="text" spellcheck="false" placeholder="Enter city name">
+            <input id="city" type="text" spellcheck="false" placeholder="Enter city name">
             <button><img src="images/search.png" alt="Search Icon"></button>
         </div>
         <div class="weather">
-            <img src="images/clear.png" alt="Weather Icon" class="weather-icon">
+            <img src="images/clouds.png" alt="Weather Icon" class="weather-icon">
             <h1 class="temperature">0°c</h1>
             <h1 class="city">ABC</h1>
-        </div>
-        <div class="details">
-            <div class="col">
-                <img src="images/humidity.png" alt="Humidity Image">
-                <div class="img-text">
-                    <p>0%</p>
-                    <p>Humidity</p>
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidity.png" alt="Humidity Image">
+                    <div class="img-text">
+                        <p class="humidity">0%</p>
+                        <p>Humidity</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col">
-                <img src="images/wind.png" alt="Humidity Image">
-                <div class="img-text">
-
-                    <p>0 km/h</p>
-                    <p>Wind Speed</p>
+                <div class="col">
+                    <img src="images/wind.png" alt="Humidity Image">
+                    <div class="img-text">
+                        <p class="wind">0 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 </body>
+
+<script>
+    const apiKey = "6b36caaa0cb74b8aa1f62abc6a0b3b6a";
+    const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric";
+
+    async function getWeather(city) {
+        const response = await fetch(apiURL + `&q=${city}` + `&appid=${apiKey}`);
+        var data = await response.json();
+
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".temperature").innerHTML = data.main.temp + " °c";
+        document.querySelector(".humidity").innerHTML = data.main.humidity + " %";
+        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+        const icon = document.querySelector(".weather-icon");
+
+        if (data.weather[0].main == "Clouds")
+            icon.src = "images/clouds.png";
+        else if (data.weather[0].main == "Clear")
+            icon.src = "images/clear.png";
+        else if (data.weather[0].main == "Drizzle")
+            icon.src = "images/drizzle.png";
+        else if (data.weather[0].main == "Mist")
+            icon.src = "images/mist.png";
+        else if (data.weather[0].main == "Rain")
+            icon.src = "images/rain.png";
+        else if (data.weather[0].main == "Snow")
+            icon.src = "images/snow.png";
+
+        document.querySelector(".weather").style.display = "block";
+    }
+
+    const cityName = document.querySelector(".search input");
+
+    document.querySelector(".search button").addEventListener("click", () => {
+        getWeather(cityName.value);
+    })
+</script>
 
 </html>
