@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: hsl(221, 100%, 96%);
+  min-height: 100vh;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.card {
+  height: fit-content;
+  width: 100%;
+  max-width: 768px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: hsl(241, 81%, 54%);
+  width: 50%;
+  gap: 15px;
+  text-align: center;
+  padding: 50px;
+  color: hsl(241, 100%, 89%);
+  border-radius: 25px;
+}
+
+#score {
+  background-color: hsla(256, 72%, 46%, 1);
+  width: fit-content;
+  padding: 10% 15%;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+#obtain {
+  font-size: 4em;
+  font-weight: bold;
+  color: hsl(0, 0%, 100%);
+}
+
+#remark {
+  color: hsl(0, 0%, 100%);
+  font-size: 2rem;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  padding: 50px;
+}
+
+.individual {
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+button {
+  background-color: hsl(241, 81%, 54%);
+  border: none;
+  padding: 15px;
+  border-radius: 25px;
+  color: hsl(0, 0%, 100%);
+  font-size: 1.2rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: hsl(224, 30%, 27%);
+}
+
+.total {
+  color: hsl(224, 30%, 27%);
+}
+
+.obtain {
+  font-weight: 700;
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .result {
+    width: 100%;
+  }
+
+  .summary {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .card {
+    margin-top: 0;
+    border-radius: 0px;
+  }
+  .result {
+    border-radius: 0 0 25px 25px;
+  }
+}
