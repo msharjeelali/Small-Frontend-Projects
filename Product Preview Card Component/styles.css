@@ -1,0 +1,143 @@
+:root {
+  --Green500: hsl(158, 36%, 37%);
+  --Green700: hsl(158, 42%, 18%);
+  --Black: hsl(212, 21%, 14%);
+  --Grey: hsl(228, 12%, 48%);
+  --Cream: hsl(30, 38%, 92%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+html {
+  background-color: var(--Cream);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: Fraunces, sans-serif;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  max-width: 700px;
+  height: fit-content;
+  border-radius: 15px;
+  background-color: var(--White);
+}
+
+.card-image > img {
+  width: 100%;
+}
+
+.card-content {
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.perfume {
+  color: var(--Grey);
+  font-family: Montserrat;
+  letter-spacing: 5px;
+}
+
+.content {
+  color: var(--Grey);
+  font-family: Montserrat;
+}
+
+.price {
+  display: flex;
+  gap: 20px;
+}
+
+.discount-price {
+  color: var(--Green500);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.current-price {
+  color: var(--Grey);
+  font-size: 1rem;
+  align-self: center;
+}
+
+button {
+  color: var(--White);
+  background-color: var(--Green500);
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: Montserrat;
+}
+
+button:hover {
+  background-color: var(--Green700);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  #desktop-image {
+    display: none;
+  }
+  .card-image {
+    width: 100%;
+    img {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+  }
+  .card-content {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .card {
+    flex-direction: row;
+    margin-top: 100px;
+  }
+  #mobile-image {
+    display: none;
+  }
+  .card-image {
+    width: 50%;
+    img {
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+  }
+  .card-content {
+    width: 50%;
+  }
+}
