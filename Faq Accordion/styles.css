@@ -20,7 +20,7 @@ main {
   height: 100%;
   width: 100%;
   background-color: var(--Purple100);
-  background-image: url("./assets/images/background-pattern-desktop.svg");
+  background-image: url("./images/background-pattern-desktop.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -64,9 +64,10 @@ p {
 
 @media screen and (max-width: 450px) {
   main {
-    background-image: url("./assets/images/background-pattern-mobile.svg");
+    background-image: url("./images/background-pattern-mobile.svg");
   }
   .card {
     width: 90%;
   }
 }
+
