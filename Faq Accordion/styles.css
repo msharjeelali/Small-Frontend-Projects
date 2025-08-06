@@ -1,0 +1,72 @@
+:root {
+  --White: hsl(0, 100%, 100%);
+  --Purple100: hsl(275, 100%, 97%);
+  --Purple600: hsl(292, 16%, 49%);
+  --Purple950: hsl(292, 42%, 14%);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  font-family: "Work Sans";
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: var(--Purple100);
+  background-image: url("./assets/images/background-pattern-desktop.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.card {
+  background-color: var(--White);
+}
+
+summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+summary:hover {
+  color: var(--Purple600);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details {
+  color: var(--Purple950);
+}
+
+p {
+  color: var(--Purple650);
+  max-width: 500px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 450px) {
+  main {
+    background-image: url("./assets/images/background-pattern-mobile.svg");
+  }
+  .card {
+    width: 90%;
+  }
+}
